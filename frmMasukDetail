@@ -1,0 +1,36 @@
+Public Class frmMasukDetail
+
+    Private Sub ClearEntry()
+        txtKodeBarang.Text = ""
+        txtNamaBarang.Text = ""
+        txtKodeBarang.Text = ""
+        txtQTY.Text = ""
+    End Sub
+    Private Sub Reload()
+        oBM.getAllData(DataGridView)
+    End Sub
+    Private Sub btnAdd_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnAdd.Click
+        SimpanMasukDetail()
+        txtKodeBarang.Focus()
+    End Sub
+
+    Private Sub SimpanMasukDetail()
+        obmd.nomor_faktur = txtNomorfaktur.Text
+        obmd.idmdetail = txtKodeBarang.Text
+        obmd.kode_barang = txtKodeBarang.Text
+        obmd.qty = txtQTY.Text
+
+        barangkeluar_detail_baru = True
+        obmd.SimpanMasukDetail()
+        ClearEntry()
+        Reload()
+    End Sub
+
+    Private Sub frmMasukDetail_Load(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MyBase.Load
+
+    End Sub
+
+    Private Sub btnClose_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnClose.Click
+        Me.Close()
+    End Sub
+End Class
