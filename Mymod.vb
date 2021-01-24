@@ -11,7 +11,9 @@ Module MyMod
     Public cldbarang As New frmBarang
     Public cldbm As New frmbarangmasuk
     Public cldbk As New frmBarangkeluar
-    Public cldsupplier As New frmsupplier
+    Public cldsupplier As New frmSupplier
+    Public cldmdetail As New frmMasukDetail
+    Public cldkdetail As New frmKeluardetail
 
     Public barang_masuk As Boolean
     Public menu_barang As Boolean
@@ -36,23 +38,19 @@ Module MyMod
     'Tabel Barangkeluar
     '--------------------------------
     Public barangkeluar_baru As Boolean
+    Public barangkeluar_detail_baru As Boolean
     Public oBK As New Barangkeluar
     '--------------------------------
     'Tabel Barangmasuk
     '--------------------------------
     Public barangmasuk_baru As Boolean
+    Public bmdetail_baru As Boolean
     Public oBM As New Barangmasuk
     '--------------------------------
     'Tabel Supplier
     '--------------------------------
     Public supplier_baru As Boolean
     Public osupplier As New Supplier
-    '--------------------------------
-    'Tabel Detail
-    '--------------------------------
-    Public barangmasuk_detail_baru As Boolean
-    Public barangkeluar_detail_baru As Boolean
-    Public obmd As New Detail
     '--------------------------------
     Public R As Random = New Random
     Public TotalTab As Integer = 0
@@ -85,7 +83,7 @@ Module MyMod
         conn.ConnectionString = "server=localhost;" &
         "user id=root;" &
         "password=;" &
-        "database=quiz2"
+        "database=gudang1"
         Try
             conn.Open()
         Catch ex As Exception
@@ -126,4 +124,5 @@ Module MyMod
         Return res
     End Function
 End Module
+
 
